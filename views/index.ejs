@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャットルーム（トップページ）</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+    </header>
+    <main class="main">
+        <div class="main_top">
+            <h2 class="main_top-title">チャットルーム</h2>
+        </div>
+        <form action="/name" method="POST" class="main_form" name="form">
+            <p class="main_form-about">ニックネームを入力してチャットに参加しよう！</p>
+            <p class="main_form-num">※15文字を超えるニックネームは使用できません</p>
+            <label for="" class="main_top-namelabel">ニックネーム：</label>
+            <p class="main_form-warning">※文字を入力してください<br>※ニックネームを入力しないとチャットに参加出来ません</p>
+            <input type="text" name="name" class="main_form-name">
+            <button class="main_form-btn" type="submit">送信</button>
+        </form>
+    </main>
+    <script src="/js/index.js"></script>
+</body>
+</html>

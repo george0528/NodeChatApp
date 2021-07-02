@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャットルーム</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body name='<%= name %>' token>
+    <p style="display: none;" class="myName"><%= name %></p>
+    <p style="display: none;" class="myToken"></p>
+    <header class="header">
+        <div class="header_top">
+            <p class="header_top-title">現在入室中の人は</p>
+        </div>
+        <ul class="header_namelist">
+        </ul>
+    </header>
+    <main class="main">
+        <form action="#" class="main_form">
+            <label for="" class="main_form-messagelabel">メッセージ：</label><br>
+            <textarea type="text" class="main_form-message" rows="1" cols="30" placeholder="文字を入力してください。"></textarea><br>
+            <button class="main_form-btn">送信</button>
+        </form>
+        <div class="main_contents"></div>
+    </main>
+    <script src="/js/chat.js"></script>
+</body>
+</html>

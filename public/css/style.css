@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  width: 90%;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main_top-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.main_form {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.main_form-about {
+  margin-bottom: 10px;
+}
+
+.main_form-warning {
+  color: red;
+  display: none;
+}
+
+.main_form-num {
+  color: red;
+  margin: 10px 0;
+}
+
+.main_form-name:focus {
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */

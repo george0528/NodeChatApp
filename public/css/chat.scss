@@ -1,0 +1,180 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+// 変数
+$subcolor: darken(gray, 10%);
+$bgcolor: lighten(silver, 20%);
+body {
+    background-color: white;
+}
+.header {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &_top {
+        margin-bottom: 30px;
+        &-title {
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+    &_namelist {
+        width: auto;
+        margin: 0 auto 15px;
+    }
+}
+.main {
+    text-align: center;
+    &_form {
+        margin: 10px 0;
+        &-message {
+            margin: 10px 0;
+            padding-left: 5px;
+            line-height: 1.5em;
+            resize: none;
+            border: none;
+            border-bottom: 1px solid black;
+            font-size: 20px;
+            &::placeholder {
+                padding-left: 5px;
+                color: silver;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        &-btn {
+            height: 50px;
+            width: 200px;
+        }
+    }
+    &_contents {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        min-height: 70%;
+        height: auto;
+        &_content {
+            box-sizing: border-box;
+            width: 400px;
+            padding: 0 20px;
+            margin: 5px auto;
+            font-size: 18px;
+            text-align: left;
+            background-color: $bgcolor;
+            border: 1px solid $subcolor;
+            position: relative;
+            left: -20px;
+            border-radius: 10px;
+            &::before {
+                content: '';
+                background-color: $bgcolor;
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                top: 50%;
+                left: 0;
+                transform: translate(calc(-50% - 1px),-50%) rotate(45deg);
+                border-left: 1px solid $subcolor;
+                border-bottom: 1px solid $subcolor;
+                z-index: 2;
+            }
+            &-name, &-date {
+                word-wrap: break-word;
+                margin-right: 10px;
+                text-align: left;
+                color: $subcolor;
+                font-size: 13px;
+            }
+            &-msg, &-more {
+                width: 100%;
+                word-wrap: break-word;
+            }
+            &-btn {
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                border-top: 1px solid $subcolor;
+                color: $subcolor;
+                position: relative;
+                cursor: pointer;
+                &.hide {
+                    display: none;
+                }
+                &::after {
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    top: 50%;
+                    right: 10%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    border-top: 2px solid $subcolor;
+                    border-right: 2px solid $subcolor;
+                    transition: transform 0.3s;
+                }
+                &:hover::after {
+                    transform: translate(50%, -50%) rotate(45deg);
+                }
+            }
+            &-more {
+                &.show {
+                    display: block;
+                }
+                display: none;
+            }
+        }
+        // 自分のメッセージの設定
+        &_content.my-message {
+            $mycolor: darken(skyblue, 30%);
+            $yellow: #ADFF2F;
+            border: 1px solid black;
+            background-color: $yellow;
+            left: 20px;
+            &::before {
+                display: none;
+            }
+            &::after {
+                content: '';
+                background-color: $yellow;
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                top: 50%;
+                right: 0;
+                transform: translate(calc(50% + 1px), -50%) rotate(225deg);
+                border-left: 1px solid black;
+                border-bottom: 1px solid black;
+                z-index: 2;
+            }
+        }
+        // 管理人メッセージの設定
+        &_content.master {
+            background-color: skyblue;
+            left: 0;
+            &::before {
+                display: none;
+            }
+            // 入室の場合
+            &.in {
+                background-color: skyblue;
+            }
+            // 退室の場合
+            &.out {
+                background-color: coral;
+            }
+            .main_contents_content-name {
+                color: black;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .main_contents_content {
+        width: 290px;
+    }
+}

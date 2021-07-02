@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 90%;
+    margin: 0 auto;
+    height: 100px;
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+    &_top {
+        &-title {
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+    &_form {
+        margin-top: 50px;
+        text-align: center;
+        &-about {
+            margin-bottom: 10px;
+        }
+        &-warning {
+            color: red;
+            display: none;
+        }
+        &-num {
+            color: red;
+            margin: 10px 0;
+        }
+        &-name {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
